@@ -7,6 +7,7 @@ Created with React and statically rendered using Gatsby.js.
 ## Live demo
 
 - [Live demo — sky-epg.davwheat.dev](https://sky-epg.davwheat.dev/)
+- Disney Jr HD has been added to the EPG demo
 
 ## Features
 
@@ -28,4 +29,4 @@ Created with React and statically rendered using Gatsby.js.
 
 This project is licensed under the Mozilla Public License 2.0. This license only covers code files and assets created by myself, and not any third-party assets and files, such as fonts or images.
 
-Sky is the registered trademark of Sky Group Limited. The background music is the copyright of its respective owners and is being used in good faith without any intent to be monetised or replace t[...]
+Sky is the registered trademark of Sky Group Limited. The background music is the copyright of its respective owners and is being used in good faith without any intent to be monetised or replace t[...[...]
