@@ -1,0 +1,109 @@
+:root{
+  --channel-col-width: 200px;
+  --cell-height: 60px;
+  --cell-gap: 6px;
+  --bg: #0b1220;
+  --cell-bg: #111827;
+  --text: #f3f4f6;
+  --muted: #9ca3af;
+  --yellow: #ffeb66;
+  --yellow-border: #f7c948;
+}
+
+*{box-sizing:border-box; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;}
+body{margin:16px; background:var(--bg); color:var(--text);}
+
+#epg-container{
+  width: 100%;
+  overflow: auto;
+  border-radius: 8px;
+  padding: 8px;
+  background: linear-gradient(180deg,#071025 0%, #071220 100%);
+}
+
+/* header row showing times */
+.epg-header{
+  display:flex;
+  gap:var(--cell-gap);
+  margin-bottom:8px;
+  align-items:stretch;
+}
+
+/* left column for channel names */
+.channel-col{
+  min-width:var(--channel-col-width);
+  max-width:var(--channel-col-width);
+  flex: 0 0 var(--channel-col-width);
+  padding: 8px;
+  color:var(--muted);
+  font-weight:600;
+  background:transparent;
+}
+
+/* grid rows */
+.epg-row{
+  display:flex;
+  gap:var(--cell-gap);
+  align-items:stretch;
+  margin-bottom: var(--cell-gap);
+}
+
+/* channel cell */
+.channel-cell{
+  min-width:var(--channel-col-width);
+  max-width:var(--channel-col-width);
+  background: rgba(255,255,255,0.03);
+  padding: 8px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-radius:6px;
+  color:var(--text);
+  font-weight:600;
+}
+
+/* program cells */
+.program-cell{
+  flex: 1 1 0;
+  min-width: 160px;
+  background: var(--cell-bg);
+  height: var(--cell-height);
+  border-radius:6px;
+  padding: 8px;
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  overflow:hidden;
+  cursor:pointer;
+  border: 2px solid transparent;
+}
+
+/* small text inside program */
+.program-title{ font-size: 14px; font-weight:600; }
+.program-time{ font-size: 12px; color:var(--muted); margin-top:4px; }
+
+/* the yellow highlight style */
+.epg-selected{
+  background: linear-gradient(90deg, var(--yellow) 0%, #fff9d1 100%);
+  color: #111;
+  border-color: var(--yellow-border);
+  box-shadow: 0 6px 18px rgba(247,200,72,0.12);
+  transform: translateZ(0);
+}
+
+/* focus-visible for accessibility when focusing with keyboard */
+.program-cell:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(247,200,72,0.15);
+}
+
+/* header cell style */
+.time-heading{
+  flex:1;
+  min-width:160px;
+  padding: 8px;
+  color:var(--muted);
+  text-align:center;
+  font-size:12px;
+}
