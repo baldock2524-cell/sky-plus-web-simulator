@@ -1,0 +1,26 @@
+.player-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: #000;
+  display: block;
+  position: relative;
+}
+
+/* modern browsers */
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+/* fallback: ensure the video fills the wrapper */
+.player-wrapper video,
+.player-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

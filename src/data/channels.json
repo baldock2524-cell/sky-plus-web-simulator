@@ -1,0 +1,102 @@
+{
+  "Entertainment": [
+    {
+      "id": "bbc-one",
+      "name": "BBC One (placeholder)",
+      "country": "UK",
+      "stream": null,
+      "homepage": "https://www.bbc.co.uk/bbcone",
+      "logo": "https://example.com/logos/bbc-one.png",
+      "notes": "Replace null with a working HLS/MP4 URL you have rights to (BBC streams are geo-restricted)."
+    },
+    {
+      "id": "channel-4",
+      "name": "Channel 4 (placeholder)",
+      "country": "UK",
+      "stream": null,
+      "homepage": "https://www.channel4.com",
+      "logo": "https://example.com/logos/channel4.png",
+      "notes": "Channel 4 live streams require provider authentication — replace with your own URL if available."
+    }
+  ],
+  "Movies": [
+    {
+      "id": "sintel",
+      "name": "Sintel (sample)",
+      "country": "Public",
+      "stream": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      "homepage": "https://durian.blender.org/",
+      "logo": "https://durian.blender.org/wp-content/uploads/2010/05/sintel_poster-300x169.jpg"
+    },
+    {
+      "id": "big-buck-bunny",
+      "name": "Big Buck Bunny (sample)",
+      "country": "Public",
+      "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+      "homepage": "https://peach.blender.org/",
+      "logo": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    }
+  ],
+  "Sports": [
+    {
+      "id": "eurosport",
+      "name": "Eurosport (placeholder)",
+      "country": "UK",
+      "stream": null,
+      "homepage": "https://www.eurosport.com",
+      "logo": "https://example.com/logos/eurosport.png",
+      "notes": "Replace with a valid sports HLS stream (many are geo-restricted)."
+    }
+  ],
+  "News": [
+    {
+      "id": "al-jazeera",
+      "name": "Al Jazeera English (public)",
+      "country": "International",
+      "stream": "https://live-hls-web-aje.getaj.net/AJE/01.m3u8",
+      "homepage": "https://www.aljazeera.com/",
+      "logo": "https://www.aljazeera.com/assets/images/logo-aljazeera-240.png"
+    },
+    {
+      "id": "sky-news",
+      "name": "Sky News (placeholder)",
+      "country": "UK",
+      "stream": null,
+      "homepage": "https://news.sky.com",
+      "logo": "https://example.com/logos/skynews.png"
+    }
+  ],
+  "Documentaries": [
+    {
+      "id": "sample-doc",
+      "name": "Sample Documentary (Sintel)",
+      "country": "Public",
+      "stream": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      "homepage": "https://durian.blender.org/",
+      "logo": "https://durian.blender.org/wp-content/uploads/2010/05/sintel_poster-300x169.jpg"
+    }
+  ],
+  "Kids": [
+    {
+      "id": "bbb-kids",
+      "name": "Big Buck Bunny (kids sample)",
+      "country": "Public",
+      "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
+      "homepage": "https://peach.blender.org/",
+      "logo": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+    }
+  ],
+  "Music": [
+    {
+      "id": "sample-music",
+      "name": "Sample Music Video",
+      "country": "Public",
+      "stream": "https://test-videos.co.uk/vids/ifamily/mp4/720/IF-Issue-720.mp4",
+      "homepage": "https://example.com/",
+      "logo": "https://example.com/logos/music.png"
+    }
+  ],
+  "meta": {
+    "note": "This file contains a mix of public test streams and placeholders for UK broadcasters. Many UK broadcasters are geo-restricted and require authentication; replace placeholders with streams you have rights to."
+  }
+}
