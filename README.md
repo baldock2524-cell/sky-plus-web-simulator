@@ -7,7 +7,7 @@ Created with React and statically rendered using Gatsby.js.
 ## Live demo
 
 - [Live demo — sky-epg.davwheat.dev](https://sky-epg.davwheat.dev/)
-- Disney Jr HD has been added to the EPG demo
+- [Disney Jr HD — Live demo README](https://github.com/baldock2524-cell/sky-plus-web-simulator/blob/main/README.md#live-demo)
 
 ## Features
 
