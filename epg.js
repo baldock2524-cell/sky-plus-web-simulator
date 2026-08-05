@@ -1,6 +1,8 @@
-// EPG data: array of channels, each with number, name, and programs array.
+import { kidsChannels } from './src/data/kidsChannels.js';
+
+// base EPG data: array of channels, each with number, name, and programs array.
 // Each program corresponds to a time slot column in the UI.
-const channels = [
+const baseChannels = [
   { number: 101, name: 'BBC One', programs: [
       { title: 'Morning News', start: '06:00' },
       { title: 'Cartoons', start: '06:30' },
@@ -45,6 +47,16 @@ const channels = [
 
 // times array defines each column's start time label
 const times = ['06:00','06:30','07:00','07:30','08:00','08:30'];
+
+// convert imported kidsChannels (which have no programs) into EPG-format channels
+const kidsEPG = kidsChannels.map(k => ({
+  number: k.channelNumber,
+  name: k.name,
+  programs: times.map((t, i) => ({ title: `${k.name} Show ${i+1}`, start: t }))
+}));
+
+// final channels used by the renderer
+const channels = baseChannels.concat(kidsEPG);
 
 // state for selection
 let selectedRow = 0;
