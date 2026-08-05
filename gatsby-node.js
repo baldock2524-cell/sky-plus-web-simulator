@@ -39,7 +39,16 @@ exports.createPages = ({ actions }) => {
   const allChannels = getAllChannels()
 
   const channelsWithStreams = allStreams.reduce((channels, streamData) => {
-    const streamChannels = allChannels.filter(channel => streamData.name === channel.name)
+    const streamName = (streamData.name || '').toLowerCase()
+
+    const streamChannels = allChannels.filter(channel => {
+      const channelName = (channel.name || '').toLowerCase()
+      return (
+        channelName === streamName ||
+        channelName.includes(streamName) ||
+        streamName.includes(channelName)
+      )
+    })
 
     if (streamChannels.length) {
       streamChannels.forEach(channel => {

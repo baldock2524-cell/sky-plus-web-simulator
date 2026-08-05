@@ -78,12 +78,28 @@
   ],
   "Kids": [
     {
-      "id": "bbb-kids",
-      "name": "Big Buck Bunny (kids sample)",
-      "country": "Public",
-      "stream": "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
-      "homepage": "https://peach.blender.org/",
-      "logo": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217"
+      "id": "cbbc",
+      "name": "CBBC",
+      "country": "UK",
+      "stream": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:cbbc_hd/t=3840/v=pv14/b=5070016/main.m3u8",
+      "homepage": "https://www.bbc.co.uk/cbbc",
+      "logo": "https://example.com/logos/cbbc.png"
+    },
+    {
+      "id": "cbeebies",
+      "name": "CBeebies",
+      "country": "UK",
+      "stream": "https://vs-hls-pushb-uk-live.akamaized.net/x=4/i=urn:bbc:pips:service:cbeebies_hd/t=3840/v=pv14/b=5070016/main.m3u8",
+      "homepage": "https://www.bbc.co.uk/cbeebies",
+      "logo": "https://example.com/logos/cbeebies.png"
+    },
+    {
+      "id": "citv",
+      "name": "CITV",
+      "country": "UK",
+      "stream": "https://example.com/citv-placeholder.m3u8",
+      "homepage": "https://www.itv.com/hub/citv",
+      "logo": "https://example.com/logos/citv.png"
     }
   ],
   "Music": [

@@ -31,7 +31,7 @@ const WatchChannelPage: React.FC<Props> = ({ pageContext: { channel, streamData 
   const [pageState, setPageState] = useState({
     error: false,
   })
-  const videoRef = useRef(null)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
   function goBack(e: SkyControlPressedEvent) {
@@ -48,85 +48,67 @@ const WatchChannelPage: React.FC<Props> = ({ pageContext: { channel, streamData 
     document.addEventListener('skyControlPressed', goBack)
     window.__bgAudio.pause()
 
-    let hls: Hls
+    let hlsInstance: Hls | null = null
 
-    if (tvLicenseStateValue.hasTvLicense) {
-      if (videoRef.current) {
-        if (!window.Hls.isSupported() && !pageState.error) {
-          setPageState(s => ({ ...s, error: true }))
-        }
+    if (!tvLicenseStateValue.hasTvLicense) {
+      setPageState(s => ({ ...s, error: true }))
+      return
+    }
 
-        hls = new window.Hls({ debug: true })
-        hls.loadSource(streamData.streamUrl)
-        hls.attachMedia(videoRef.current)
+    const videoEl = videoRef.current
+    if (!videoEl) return
 
-        hls.on(window.Hls.Events.ERROR, (_, e) => {
-          console.warn(e)
+    const streamUrl = streamData.streamUrl
 
-          switch (e.type) {
-            case 'networkError':
-              setPageState(s => ({ ...s, error: true }))
-              break
-          }
+    const canPlayNative = videoEl.canPlayType('application/vnd.apple.mpegurl') !== ''
+
+    if (canPlayNative) {
+      videoEl.src = streamUrl
+      videoEl
+        .play()
+        .catch(() => {
+          enqueueSnackbar('TV stream is paused', { variant: 'warning', persist: true, key: 'STREAM_PAUSED' })
         })
+    } else if (window.Hls && window.Hls.isSupported()) {
+      hlsInstance = new window.Hls({ debug: false })
+      hlsInstance.loadSource(streamUrl)
+      hlsInstance.attachMedia(videoEl)
 
-        hls.on(window.Hls.Events.MEDIA_ATTACHED, () => {
-          videoRef.current.play().catch((e: Error) => {
-            console.warn(e)
+      hlsInstance.on(window.Hls.Events.ERROR, (_eventName, data) => {
+        console.warn('HLS error', data)
+        if (data && data.type === 'networkError') setPageState(s => ({ ...s, error: true }))
+      })
 
-            enqueueSnackbar('TV stream is paused', {
-              variant: 'warning',
-              persist: true,
-              key: 'STREAM_PAUSED',
-              action: key => (
-                <Button
-                  onClick={() => {
-                    videoRef.current.play()
-                    closeSnackbar(key)
-                  }}
-                >
-                  Resume stream
-                </Button>
-              ),
-            })
+      hlsInstance.on(window.Hls.Events.MEDIA_ATTACHED, () => {
+        videoEl
+          .play()
+          .catch(() => {
+            enqueueSnackbar('TV stream is paused', { variant: 'warning', persist: true, key: 'STREAM_PAUSED' })
           })
-        })
-      }
+      })
+    } else {
+      setPageState(s => ({ ...s, error: true }))
     }
 
     return () => {
       document.removeEventListener('skyControlPressed', goBack)
       if (controlsVisible.backUp) setControlsVisible(controlsShownStateSetter(['backUp'], false))
-
-      if (hls) {
-        hls.destroy()
-      }
-
+      if (hlsInstance) hlsInstance.destroy()
       closeSnackbar('STREAM_PAUSED')
     }
-  })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [streamData.streamUrl, tvLicenseStateValue.hasTvLicense])
 
   return (
     <InnerLayout>
       <div className={classes.root}>
         {tvLicenseStateValue.hasTvLicense && !pageState.error && <video ref={videoRef} className={classes.video} />}
-        {tvLicenseStateValue.hasTvLicense && pageState.error && (
-          <FullScreenError errorCode={30}>
-            <br />
-            There is a technical fault with this channel
-            <br />
-            Please try again later
-          </FullScreenError>
+        {(!tvLicenseStateValue.hasTvLicense || pageState.error) && (
+          <FullScreenError
+            title={pageState.error ? 'Unable to play stream' : 'TV licence required'}
+            description={pageState.error ? 'The stream could not be loaded. Check console for HLS errors (CORS/geo-block).' : 'You need a TV licence to watch live TV.'}
+          />
         )}
-
-        {tvLicenseStateValue.hasOptedOutOfTvLicenseContent && (
-          <FullScreenError errorCode={null} controlPrompt controlPromptAction="return">
-            <br />
-            This content is only available to TV Licensees
-          </FullScreenError>
-        )}
-
-        <SearchAndScan channel={channel} />
       </div>
     </InnerLayout>
   )
