@@ -9,13 +9,19 @@ Created with React and statically rendered using Gatsby.js.
 - [Live demo — sky-epg.davwheat.dev](https://sky-epg.davwheat.dev/)
 - [Disney Jr HD — Live demo README](https://github.com/baldock2524-cell/sky-plus-web-simulator/blob/main/README.md#live-demo)
 
+## Interactive services
+
+A collection of interactive demos and related links for this project:
+
+- [Official project repository on GitHub](https://github.com/baldock2524-cell/sky-plus-web-simulator)
+- [Official live demo — sky-epg.davwheat.dev](https://sky-epg.davwheat.dev/)
+- [Sky Games — interactive demo (STB Gaming)](https://stb-gaming.github.io/sky-games/)
+
 ## Features
 
 - Real EPG background music as found on old Sky boxes
 - **Real-time EPG listings**, retrieved through Sky's own EPG API
 - View template recreations of some old interactive services (only Directgov as of now)
-  - [Sky Games — interactive demo](https://stb-gaming.github.io/sky-games/)
-  - [Project repository on GitHub](https://github.com/baldock2524-cell/sky-plus-web-simulator)
 - Fast, performant and statically generated using React + Gatsby
 
 ## Future developments
