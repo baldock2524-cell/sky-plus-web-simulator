@@ -15,6 +15,7 @@ Created with React and statically rendered using Gatsby.js.
 - **Real-time EPG listings**, retrieved through Sky's own EPG API
 - View template recreations of some old interactive services (only Directgov as of now)
   - [Sky Games — interactive demo](https://stb-gaming.github.io/sky-games/)
+  - [Project repository on GitHub](https://github.com/baldock2524-cell/sky-plus-web-simulator)
 - Fast, performant and statically generated using React + Gatsby
 
 ## Future developments
