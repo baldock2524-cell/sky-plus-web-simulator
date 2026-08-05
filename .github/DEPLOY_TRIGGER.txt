@@ -1,0 +1,5 @@
+Deploy trigger
+
+This file was created to trigger the GitHub Actions workflow and redeploy the site.
+
+Timestamp: 2026-08-05T13:10:16Z
