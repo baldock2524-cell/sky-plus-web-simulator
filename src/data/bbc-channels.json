@@ -1,0 +1,65 @@
+[
+  {
+    "id": "bbcone",
+    "name": "BBC One",
+    "logo": "/assets/logos/bbc-one.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbctwo",
+    "name": "BBC Two",
+    "logo": "/assets/logos/bbc-two.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbcthree",
+    "name": "BBC Three",
+    "logo": "/assets/logos/bbc-three.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbcfour",
+    "name": "BBC Four",
+    "logo": "/assets/logos/bbc-four.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbcnews",
+    "name": "BBC News",
+    "logo": "/assets/logos/bbc-news.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "cbbc",
+    "name": "CBBC",
+    "logo": "/assets/logos/cbbc.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "cbeebies",
+    "name": "CBeebies",
+    "logo": "/assets/logos/cbeebies.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbcparliament",
+    "name": "BBC Parliament",
+    "logo": "/assets/logos/bbc-parliament.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  },
+  {
+    "id": "bbcalba",
+    "name": "BBC Alba",
+    "logo": "/assets/logos/bbc-alba.png",
+    "streamUrl": "REPLACE_WITH_LEGALLY_OBTAINED_STREAM_URL",
+    "source": "placeholder"
+  }
+]
