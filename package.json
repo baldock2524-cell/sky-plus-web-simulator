@@ -1,8 +1,8 @@
 {
   "name": "sky-plus-epg-simulator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Sky Box Simulator",
+  "description": "Sky Box Simulator with Working IPTV Channels",
   "license": "MPL-2.0",
   "author": {
     "name": "David Wheatley",
@@ -10,7 +10,10 @@
     "url": "https://davwheat.dev"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "iptv",
+    "channels",
+    "streaming"
   ],
   "scripts": {
     "develop": "gatsby develop",
@@ -27,6 +30,7 @@
   "dependencies": {
     "@material-ui/core": "^4.12.3",
     "@material-ui/styles": "^4.11.4",
+    "axios": "^0.27.2",
     "clsx": "^1.1.1",
     "dayjs": "^1.10.7",
     "deep-equal": "^2.0.5",
@@ -49,6 +53,7 @@
     "gatsby-source-local-git": "^1.2.2",
     "gatsby-transformer-sharp": "^4.4.0",
     "hls.js": "^1.1.1",
+    "m3u8-parser": "^4.8.0",
     "mdi-react": "^8.2.0",
     "notistack": "^1.0.10",
     "preact": "^10.6.4",
@@ -58,7 +63,8 @@
     "react-dom": "^17.0.2",
     "react-head": "^3.4.0",
     "recoil": "^0.5.2",
-    "recoil-persistence": "^0.3.0-beta.1"
+    "recoil-persistence": "^0.3.0-beta.1",
+    "shaka-player": "^4.3.8"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.16.3",

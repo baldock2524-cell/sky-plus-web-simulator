@@ -1,43 +1,149 @@
-// Expanded channel list for interactive page with more UK and international channels.
-// NOTE: These are placeholders. Replace streamUrl with licensed HLS URLs you have rights to.
-
-type Channel = {
-  id: string;
+export interface IPTVChannel {
+  id: number;
   name: string;
-  streamUrl: string;
-  poster?: string;
-};
+  logo: string;
+  m3u8Url?: string;
+  hlsStream?: string;
+  category: string;
+}
 
-const channels: Channel[] = [
-  // Demo/test streams
-  { id: 'mux-test', name: 'Mux Test Stream', streamUrl: 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8', poster: '/posters/poster-mux-test.svg' },
-  { id: 'sintel-bitdash', name: 'Sintel (Bitdash)', streamUrl: 'https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8', poster: '/posters/poster-sintel.svg' },
-  { id: 'sample-mp4', name: 'Sample MP4 (external)', streamUrl: 'https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4', poster: '/posters/poster-sample.svg' },
-
-  // UK major broadcasters (placeholders)
-  { id: 'bbc-one', name: 'BBC One', streamUrl: '/streams/bbc-one.m3u8', poster: '/posters/poster-bbc-one.svg' },
-  { id: 'bbc-two', name: 'BBC Two', streamUrl: '/streams/bbc-two.m3u8', poster: '/posters/poster-bbc-two.svg' },
-  { id: 'bbc-three', name: 'BBC Three', streamUrl: '/streams/bbc-three.m3u8', poster: '/posters/poster-bbc-three.svg' },
-  { id: 'bbc-four', name: 'BBC Four', streamUrl: '/streams/bbc-four.m3u8', poster: '/posters/poster-bbc-four.svg' },
-  { id: 'bbc-news', name: 'BBC News', streamUrl: '/streams/bbc-news.m3u8', poster: '/posters/poster-bbc-news.svg' },
-
-  { id: 'itv', name: 'ITV', streamUrl: '/streams/itv.m3u8', poster: '/posters/poster-itv.svg' },
-  { id: 'itv2', name: 'ITV2', streamUrl: '/streams/itv2.m3u8', poster: '/posters/poster-itv2.svg' },
-  { id: 'channel4', name: 'Channel 4', streamUrl: '/streams/channel4.m3u8', poster: '/posters/poster-channel4.svg' },
-  { id: 'channel5', name: 'Channel 5', streamUrl: '/streams/channel5.m3u8', poster: '/posters/poster-channel5.svg' },
-
-  // Sky placeholders
-  { id: 'sky-news', name: 'Sky News', streamUrl: '/streams/sky-news.m3u8', poster: '/posters/poster-sky-news.svg' },
-  { id: 'sky-atlantic', name: 'Sky Atlantic', streamUrl: '/streams/sky-atlantic.m3u8', poster: '/posters/poster-sky-atlantic.svg' },
-  { id: 'sky-sports-main', name: 'Sky Sports Main Event', streamUrl: '/streams/sky-sports-main.m3u8', poster: '/posters/poster-sky-sports-main.svg' },
-
-  // International channels (placeholders)
-  { id: 'cnn', name: 'CNN', streamUrl: '/streams/cnn.m3u8', poster: '/posters/poster-cnn.svg' },
-  { id: 'aljazeera', name: 'Al Jazeera', streamUrl: '/streams/aljazeera.m3u8', poster: '/posters/poster-aljazeera.svg' },
-  { id: 'euronews', name: 'Euronews', streamUrl: '/streams/euronews.m3u8', poster: '/posters/poster-euronews.svg' },
-
-  // Local sample
-  { id: 'local-sample', name: 'Sample MP4 (local)', streamUrl: '/sample.mp4', poster: '/posters/poster-sample.svg' },
+export const IPTV_CHANNELS: IPTVChannel[] = [
+  {
+    id: 1,
+    name: "BBC One",
+    logo: "https://via.placeholder.com/200x100?text=BBC+One",
+    category: "Public Broadcasting",
+    hlsStream: "#EXTINF:-1 tvg-id=\"bbcone\" tvg-name=\"BBC One\" tvg-logo=\"https://via.placeholder.com/200x100?text=BBC+One\",BBC One"
+  },
+  {
+    id: 2,
+    name: "BBC Two",
+    logo: "https://via.placeholder.com/200x100?text=BBC+Two",
+    category: "Public Broadcasting",
+    hlsStream: "#EXTINF:-1 tvg-id=\"bbctwo\" tvg-name=\"BBC Two\" tvg-logo=\"https://via.placeholder.com/200x100?text=BBC+Two\",BBC Two"
+  },
+  {
+    id: 3,
+    name: "BBC Three",
+    logo: "https://via.placeholder.com/200x100?text=BBC+Three",
+    category: "Public Broadcasting",
+    hlsStream: "#EXTINF:-1 tvg-id=\"bbcthree\" tvg-name=\"BBC Three\" tvg-logo=\"https://via.placeholder.com/200x100?text=BBC+Three\",BBC Three"
+  },
+  {
+    id: 4,
+    name: "BBC Four",
+    logo: "https://via.placeholder.com/200x100?text=BBC+Four",
+    category: "Public Broadcasting",
+    hlsStream: "#EXTINF:-1 tvg-id=\"bbcfour\" tvg-name=\"BBC Four\" tvg-logo=\"https://via.placeholder.com/200x100?text=BBC+Four\",BBC Four"
+  },
+  {
+    id: 5,
+    name: "ITV",
+    logo: "https://via.placeholder.com/200x100?text=ITV",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"itv\" tvg-name=\"ITV\" tvg-logo=\"https://via.placeholder.com/200x100?text=ITV\",ITV"
+  },
+  {
+    id: 6,
+    name: "ITV2",
+    logo: "https://via.placeholder.com/200x100?text=ITV2",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"itv2\" tvg-name=\"ITV2\" tvg-logo=\"https://via.placeholder.com/200x100?text=ITV2\",ITV2"
+  },
+  {
+    id: 7,
+    name: "ITV3",
+    logo: "https://via.placeholder.com/200x100?text=ITV3",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"itv3\" tvg-name=\"ITV3\" tvg-logo=\"https://via.placeholder.com/200x100?text=ITV3\",ITV3"
+  },
+  {
+    id: 8,
+    name: "ITV4",
+    logo: "https://via.placeholder.com/200x100?text=ITV4",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"itv4\" tvg-name=\"ITV4\" tvg-logo=\"https://via.placeholder.com/200x100?text=ITV4\",ITV4"
+  },
+  {
+    id: 9,
+    name: "Channel 4",
+    logo: "https://via.placeholder.com/200x100?text=Channel+4",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"channel4\" tvg-name=\"Channel 4\" tvg-logo=\"https://via.placeholder.com/200x100?text=Channel+4\",Channel 4"
+  },
+  {
+    id: 10,
+    name: "Channel 5",
+    logo: "https://via.placeholder.com/200x100?text=Channel+5",
+    category: "Commercial",
+    hlsStream: "#EXTINF:-1 tvg-id=\"channel5\" tvg-name=\"Channel 5\" tvg-logo=\"https://via.placeholder.com/200x100?text=Channel+5\",Channel 5"
+  },
+  {
+    id: 11,
+    name: "London Live",
+    logo: "https://via.placeholder.com/200x100?text=London+Live",
+    category: "Regional",
+    hlsStream: "#EXTINF:-1 tvg-id=\"londonlive\" tvg-name=\"London Live\" tvg-logo=\"https://via.placeholder.com/200x100?text=London+Live\",London Live"
+  },
+  {
+    id: 12,
+    name: "Sky One",
+    logo: "https://via.placeholder.com/200x100?text=Sky+One",
+    category: "Premium",
+    hlsStream: "#EXTINF:-1 tvg-id=\"skyone\" tvg-name=\"Sky One\" tvg-logo=\"https://via.placeholder.com/200x100?text=Sky+One\",Sky One"
+  },
+  {
+    id: 13,
+    name: "Sky Atlantic",
+    logo: "https://via.placeholder.com/200x100?text=Sky+Atlantic",
+    category: "Premium",
+    hlsStream: "#EXTINF:-1 tvg-id=\"skyatlantic\" tvg-name=\"Sky Atlantic\" tvg-logo=\"https://via.placeholder.com/200x100?text=Sky+Atlantic\",Sky Atlantic"
+  },
+  {
+    id: 14,
+    name: "Sky Witness",
+    logo: "https://via.placeholder.com/200x100?text=Sky+Witness",
+    category: "Premium",
+    hlsStream: "#EXTINF:-1 tvg-id=\"skywitness\" tvg-name=\"Sky Witness\" tvg-logo=\"https://via.placeholder.com/200x100?text=Sky+Witness\",Sky Witness"
+  },
+  {
+    id: 15,
+    name: "Alibi",
+    logo: "https://via.placeholder.com/200x100?text=Alibi",
+    category: "Entertainment",
+    hlsStream: "#EXTINF:-1 tvg-id=\"alibi\" tvg-name=\"Alibi\" tvg-logo=\"https://via.placeholder.com/200x100?text=Alibi\",Alibi"
+  },
+  {
+    id: 16,
+    name: "Gold",
+    logo: "https://via.placeholder.com/200x100?text=Gold",
+    category: "Entertainment",
+    hlsStream: "#EXTINF:-1 tvg-id=\"gold\" tvg-name=\"Gold\" tvg-logo=\"https://via.placeholder.com/200x100?text=Gold\",Gold"
+  },
+  {
+    id: 17,
+    name: "Dave",
+    logo: "https://via.placeholder.com/200x100?text=Dave",
+    category: "Entertainment",
+    hlsStream: "#EXTINF:-1 tvg-id=\"dave\" tvg-name=\"Dave\" tvg-logo=\"https://via.placeholder.com/200x100?text=Dave\",Dave"
+  },
+  {
+    id: 18,
+    name: "Comedy Central",
+    logo: "https://via.placeholder.com/200x100?text=Comedy+Central",
+    category: "Entertainment",
+    hlsStream: "#EXTINF:-1 tvg-id=\"comedycentral\" tvg-name=\"Comedy Central\" tvg-logo=\"https://via.placeholder.com/200x100?text=Comedy+Central\",Comedy Central"
+  }
 ];
 
-export default channels;
+export const getChannelById = (id: number): IPTVChannel | undefined => {
+  return IPTV_CHANNELS.find(channel => channel.id === id);
+};
+
+export const getChannelsByCategory = (category: string): IPTVChannel[] => {
+  return IPTV_CHANNELS.filter(channel => channel.category === category);
+};
+
+export const getAllChannels = (): IPTVChannel[] => {
+  return IPTV_CHANNELS;
+};
